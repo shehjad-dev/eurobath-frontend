@@ -9,9 +9,6 @@ const singleProduct = ({
     selectedImage,
     setSelectedImage,
 }) => {
-    useEffect(() => {
-        console.log(selectedProduct);
-    }, []);
     const imageBuilder = imageUrlBuilder({
         baseUrl: "https://cdn.sanity.io",
         projectId: "ogzxacki",
