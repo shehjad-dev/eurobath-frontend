@@ -1,7 +1,13 @@
+import React, { useState } from "react";
 import Image from "next/image";
 import aboutImg from "../assets/images/aboutImg.jpg";
 
 const AboutSection = () => {
+    const [descIsOpen, setDescIsOpen] = useState(false);
+
+    const handleSeeMore = () => {
+        setDescIsOpen(!descIsOpen);
+    };
     return (
         <section>
             {/* <div class="px-4 py-12 mx-auto container sm:px-6 md:px-12 lg:px-24 lg:py-24 bg-red-300"> */}
@@ -42,14 +48,98 @@ const AboutSection = () => {
                             About Us
                         </h1>
                         <p className="xl:mb-8 sm:mb-[1rem] mb-[0.6rem] text-base leading-relaxed text-left text-gray-500">
+                            “Euro Bath” sanitary ware is a company established
+                            in 2002 in Bangladesh. Euro Bath had been the only
+                            sole distributor of the famous brands Vieany and
+                            Appollo.
+                        </p>
+                        {descIsOpen && (
+                            <p className="xl:mb-8 animate-fade-in-down sm:mb-[1rem] mb-[0.6rem] text-base leading-relaxed text-left text-gray-500">
+                                We import all our products from China. Euro Bath
+                                is well known for their products quality and
+                                customer services. According to the different
+                                needs of the customers, Euro bath have different
+                                products, which committed to create a more
+                                comfortable living space for the customers.
+                                Eurobath is pursuiting to be better, no matter
+                                of the good design but also of the wonderful
+                                using experience. To make the customers life
+                                more convenient. Every line and every accessary
+                                of our products integrates our careness to
+                                customers.
+                            </p>
+                        )}
+
+                        {/* <p className="xl:mb-8 sm:mb-[1rem] mb-[0.6rem] text-base leading-relaxed text-left text-gray-500">
                             We focus on your needs and your needs only. <br />{" "}
                             You deserve the perfect bathroom.
-                        </p>
+                        </p> */}
                         <div className="mt-0 lg:mt-6 max-w-7xl sm:flex">
                             <div className="mt-3 rounded-lg sm:mt-0">
-                                <button className="items-center block md:px-10 px-6 md:py-4 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                                    <a href="">About Us</a>
+                                <button
+                                    className="items-center flex flex-row md:px-10 px-6 md:py-4 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                    onClick={() => handleSeeMore()}
+                                >
+                                    <span className="mr-2">
+                                        {descIsOpen
+                                            ? "Hide Details"
+                                            : "See More"}
+                                    </span>
+                                    <span>
+                                        {descIsOpen ? (
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                strokeWidth={1.5}
+                                                stroke="currentColor"
+                                                className="w-6 h-6"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                                                />
+                                            </svg>
+                                        ) : (
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                strokeWidth={1.5}
+                                                stroke="currentColor"
+                                                className="w-6 h-6"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                                />
+                                            </svg>
+                                        )}
+                                    </span>{" "}
                                 </button>
+                                {/* <button className="items-center block md:px-10 px-6 md:py-4 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    <a href="" className="flex flex-row">
+                                        <span className="mr-2">See More</span>
+                                        <span>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                strokeWidth={1.5}
+                                                stroke="currentColor"
+                                                className="w-6 h-6"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                                />
+                                            </svg>
+                                        </span>{" "}
+                                    </a>
+                                </button> */}
                             </div>
                             {/* <div className="mt-3 rounded-lg sm:mt-0 sm:ml-3">
                                 <button className="items-center block px-10 py-3.5 text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">

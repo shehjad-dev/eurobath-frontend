@@ -18,6 +18,99 @@ const Footer = () => {
                                 />
                             </a>
                         </Link>
+                        <div className="mt-4">
+                            <div className="md:w-72 mb-4">
+                                <h3 className="text-blue-600 font-medium">
+                                    Shop 1
+                                </h3>
+                                <address className="">
+                                    <span className="font-medium">
+                                        Euro Bath Address:
+                                    </span>{" "}
+                                    16/1 Bir Uttam C.R Datta Sarak, Hatirpool,
+                                    Dhaka-1000.
+                                </address>
+                                <p>
+                                    <span className="font-medium">
+                                        Contact:
+                                    </span>{" "}
+                                    <a href="tel:+8801618600704">
+                                        +88 01618600704
+                                    </a>
+                                </p>
+                            </div>
+                            <div className="md:w-72 mb-4">
+                                <h3 className="text-blue-600 font-medium">
+                                    Shop 2
+                                </h3>
+                                <address>
+                                    <span className="font-medium">
+                                        Eurobath Address:
+                                    </span>{" "}
+                                    81 Bir Uttam C.R Datta Sarak, Hatirpool,
+                                    Dhaka-1205
+                                </address>
+                                <p>
+                                    <span className="font-medium">
+                                        Contact:
+                                    </span>{" "}
+                                    <a href="tel:+8801618600706">
+                                        +88 01618600706
+                                    </a>
+                                </p>
+                            </div>
+                            <div className="md:w-72 mb-4">
+                                <h3 className="text-blue-600 font-medium">
+                                    Shop 3
+                                </h3>
+                                <address>
+                                    <span className="font-medium">
+                                        Eurobath Address:
+                                    </span>{" "}
+                                    41 Bir Uttam C.R Datta Sarak, Hatirpool,
+                                    Dhaka-1205.
+                                </address>
+                                <p>
+                                    <span className="font-medium">
+                                        Contact:
+                                    </span>{" "}
+                                    <a href="tel:+8801618600710">
+                                        +88 01618600710
+                                    </a>
+                                </p>
+                            </div>
+                            <div className="md:w-72 mb-4">
+                                <h3 className="text-blue-600 font-medium">
+                                    Shop 4
+                                </h3>
+                                <address>
+                                    <span className="font-medium">
+                                        S.N Trading Address:
+                                    </span>{" "}
+                                    68 Bir Uttam C.R Datta Sarak, Hatirpool,
+                                    Dhaka-1205.
+                                </address>
+                                <p>
+                                    <span className="font-medium">
+                                        Contact:
+                                    </span>{" "}
+                                    <a href="tel:+8801618600701">
+                                        +88 01618600701
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        {/* <p>
+                            Shop 1: Euro Bath Address: 16/1 Bir Bttam C.R Datta
+                            Sarak, Hatirpool, Dhaka-1000. Contact: +88
+                            01618600704 Shop 2: Eurobath Address: 81 Bir Bttam
+                            C.R Datta Sarak, Hatirpool, Dhaka-1205 Contact: +88
+                            01618600706 Shop 3: Eurobath Address: 41 Bir Bttam
+                            C.R Datta Sarak, Hatirpool, Dhaka-1205 Contact: +88
+                            01618600710 Shop 4: S.N Trading Address: 68 Bir
+                            uttam C.R Datta Sarak, Hatirpool, Dhaka-1205
+                            Contact: +88 01618600701
+                        </p> */}
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 md:pr-4 pr-0">
                         <div>

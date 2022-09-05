@@ -1,7 +1,7 @@
 const ContactSection = () => {
     return (
         <div
-            className="md:scroll-mt-24 scroll-mt-20 md:px-28 border-t-[1.3px] border-[#00AEEF] border-opacity-50"
+            className="md:scroll-mt-10 scroll-mt-10 md:px-28 border-t-[1.3px] border-[#00AEEF] border-opacity-50"
             id="contact"
         >
             <div className="text-center md:mt-16 mt-8 scroll-smooth">
@@ -22,7 +22,8 @@ const ContactSection = () => {
                             marginWidth="0"
                             scrolling="no"
                             /* src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" */
-                            src="https://maps.google.com/maps?q=eurobath&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            /* src="https://maps.google.com/maps?q=eurobath&t=&z=15&ie=UTF8&iwloc=&output=embed" */
+                            src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=81 Bir Uttam C.R Datta Sarak, Hatirpool, Dhaka-1205&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                         ></iframe>
 
                         {/* style="filter: grayscale(1) contrast(1.2) opacity(0.4);" */}
@@ -32,7 +33,8 @@ const ContactSection = () => {
                                     ADDRESS
                                 </h2>
                                 <p className="mt-1">
-                                    41B Bir Uttam CR Dutta Rd, Dhaka 1000
+                                    81 Bir Uttam C.R Datta Sarak, Hatirpool,
+                                    Dhaka-1205
                                 </p>
                             </div>
                             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
@@ -45,7 +47,9 @@ const ContactSection = () => {
                                 <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
                                     PHONE
                                 </h2>
-                                <p className="leading-relaxed">+880171111111</p>
+                                <p className="leading-relaxed">
+                                    +8801618600706
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -137,8 +141,7 @@ const ContactSection = () => {
                             </a>
                         </button>
                         <p className="text-xs text-gray-500 mt-3">
-                            Chicharrones blog helvetica normcore iceland tousled
-                            brook viral artisan.
+                            We will get back to you as soon as we can
                         </p>
                     </div>
                 </div>
