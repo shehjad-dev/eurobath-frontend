@@ -9,9 +9,9 @@ const singleProduct = ({
     selectedImage,
     setSelectedImage,
 }) => {
-    /* useEffect(() => {
+    useEffect(() => {
         console.log(selectedProduct);
-    }, []); */
+    }, []);
     const imageBuilder = imageUrlBuilder({
         baseUrl: "https://cdn.sanity.io",
         projectId: "ogzxacki",
@@ -32,10 +32,19 @@ const singleProduct = ({
                     </Link>
                 </span>
                 <span className="mr-1">{" / "}</span>
-                <span> {selectedProduct.category.title}</span>
-                <span className="mr-1">{" / "}</span>
-                <span> {selectedProduct.sub_category.title}</span>
-                <span className="mr-1">{" / "}</span>
+                {selectedProduct.category.title !== null && (
+                    <>
+                        <span> {selectedProduct.category.title}</span>
+                        <span className="mr-1">{" / "}</span>
+                    </>
+                )}
+                {selectedProduct.sub_category !== null && (
+                    <>
+                        <span> {selectedProduct?.sub_category?.title}</span>
+                        <span className="mr-1">{" / "}</span>
+                    </>
+                )}
+
                 <span> {selectedProduct.name}</span>
             </div>
             <div className="">
@@ -73,7 +82,9 @@ const singleProduct = ({
                         <div className="bg-[#a8e4fa] py-1.5 px-6 rounded-full w-max mb-2">
                             <p className="text-xs text-blue-600">
                                 <span className="font-semibold">Category:</span>{" "}
-                                {selectedProduct.category.title}
+                                {selectedProduct.category === null
+                                    ? "N/A"
+                                    : selectedProduct.category.title}
                             </p>
                         </div>
                         <div className="bg-[#a8e4fa] py-1.5 px-6 rounded-full w-max">
@@ -81,7 +92,9 @@ const singleProduct = ({
                                 <span className="font-semibold">
                                     Sub Category:
                                 </span>{" "}
-                                {selectedProduct.sub_category.title}
+                                {selectedProduct.sub_category === null
+                                    ? "N/A"
+                                    : selectedProduct.sub_category.title}
                             </p>
                         </div>
 
@@ -91,16 +104,19 @@ const singleProduct = ({
                         {/* <p className="mt-4">
                             {selectedProduct.description[0]?.children[0]?.text}
                         </p> */}
-                        <PortableText
-                            content={selectedProduct.description}
-                            serializers={{
-                                li: ({ children }) => (
-                                    <li className="list-disc ml-4">
-                                        {children}
-                                    </li>
-                                ),
-                            }}
-                        />
+                        {selectedProduct.description !== null && (
+                            <PortableText
+                                content={selectedProduct.description}
+                                serializers={{
+                                    li: ({ children }) => (
+                                        <li className="list-disc ml-4">
+                                            {children}
+                                        </li>
+                                    ),
+                                }}
+                            />
+                        )}
+
                         <a
                             className="items-center block text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer mt-16 md:px-10 px-6 md:py-4 py-2"
                             href={"/#contact"}
