@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import aboutImg from "../assets/images/aboutImg.jpg";
+import aboutImg from "../assets/images/aboutImg.webp";
 
 const AboutSection = () => {
     const [descIsOpen, setDescIsOpen] = useState(false);

@@ -1,20 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import demoLogo from "../assets/images/demoLogo.PNG";
+import demoLogo from "../assets/images/demoLogo.svg";
 import MobileMenu from "./MobileMenu";
 
 const NavBar = ({ isOpen, toggleMenu }) => {
     return (
         <div className="scroll-smooth">
             <nav className="bg-white px-2 sm:px-4 py-2.5 fixed w-full sm:h-20 h-16 z-30 top-0 left-0 shadow-md">
-                <div className="container flex flex-wrap justify-between items-center mx-auto">
+                <div className="container flex flex-wrap justify-between items-center mx-auto overflow-hidden">
                     <Link href="/">
                         <a className="flex items-center">
                             <Image
                                 src={demoLogo}
                                 alt="Logo of Eurobath"
-                                width={90}
-                                height={40}
+                                width={120}
+                                height={50}
                             />
                         </a>
                     </Link>

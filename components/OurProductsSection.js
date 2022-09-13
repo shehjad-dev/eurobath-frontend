@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import featuredOne from "../assets/images/featuredOne.jpg";
-import featuredTwo from "../assets/images/featuredTwo.jpg";
-import featuredThree from "../assets/images/featuredThree.jpg";
-import featuredFour from "../assets/images/featuredFour.jpg";
+import featuredOne from "../assets/images/featuredOne.webp";
+import featuredTwo from "../assets/images/featuredTwo.webp";
+import featuredThree from "../assets/images/featuredThree.webp";
+import featuredFour from "../assets/images/featuredFour.webp";
 
 const OurProductsSection = () => {
     return (

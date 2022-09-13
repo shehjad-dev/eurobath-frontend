@@ -7,7 +7,7 @@ import OurProductsSection from "../components/OurProductsSection";
 import TestimonialSection from "../components/TestimonialSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
-import heroBg from "../assets/images/heroBg.jpg";
+import heroBg from "../assets/images/heroBg.webp";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";

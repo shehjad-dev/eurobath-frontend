@@ -1,8 +1,6 @@
 const HeroSection = () => {
     return (
-        <div className="bg-[url('../assets/images/heroBg.jpg')] bg-blend-overlay bg-fixed w-full h-[80vh] bg-cover bg-no-repeat bg-left-bottom md:bg-center sm:mt-20 mt-16 scroll-smooth">
-            {/* <div className="bg-[url('../assets/images/heroBg.jpg')] bg-gray-700 bg-blend-overlay bg-fixed w-full h-[80vh] bg-cover bg-no-repeat bg-left-bottom md:bg-center sm:mt-20 mt-16 scroll-smooth"> */}
-
+        <div className="bg-[url('../assets/images/heroBg.webp')] bg-blend-overlay bg-fixed w-full h-[80vh] bg-cover bg-no-repeat bg-left-bottom md:bg-center sm:mt-20 mt-16 scroll-smooth">
             <div className="container h-full flex items-center justify-center sm:px-0 px-4 mx-auto">
                 <div className="bg-gradient-to-b from-[#FF7F4E] to-gray-600 w-full h-[80vh] opacity-75 z-10 absolute overflow-hidden"></div>
                 <div className="w-max z-20">

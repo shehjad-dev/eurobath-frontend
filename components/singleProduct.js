@@ -9,6 +9,9 @@ const singleProduct = ({
     selectedImage,
     setSelectedImage,
 }) => {
+    /* useEffect(() => {
+        console.log(selectedProduct);
+    }, []); */
     const imageBuilder = imageUrlBuilder({
         baseUrl: "https://cdn.sanity.io",
         projectId: "ogzxacki",
@@ -23,26 +26,34 @@ const singleProduct = ({
             <div className="flex flex-row md:container md:pt-8 pt-6 items-center md:pl-28 pl-4 mt-20 md:text-base text-[0.75rem]">
                 <span>
                     <Link href="/products">
-                        <a className="font-semibold mr-1 cursor-pointer">
+                        <a className="font-semibold mr-1 cursor-pointer hover:text-blue-600 transition-all duration-100">
                             Products
                         </a>
                     </Link>
                 </span>
-                <span className="mr-1">{" / "}</span>
-                {selectedProduct.category.title !== null && (
-                    <>
-                        <span> {selectedProduct.category.title}</span>
-                        <span className="mr-1">{" / "}</span>
-                    </>
-                )}
-                {selectedProduct.sub_category !== null && (
-                    <>
-                        <span> {selectedProduct?.sub_category?.title}</span>
-                        <span className="mr-1">{" / "}</span>
-                    </>
-                )}
-
-                <span> {selectedProduct.name}</span>
+                <span>
+                    <Link href={`/categories/${selectedProduct.category._id}`}>
+                        <a className="font-semibold mr-1 cursor-pointer hover:text-blue-600 transition-all duration-100">
+                            / {selectedProduct.category.title}
+                        </a>
+                    </Link>
+                </span>
+                <span>
+                    <Link
+                        href={`/sub-categories/${selectedProduct.sub_category._id}`}
+                    >
+                        <a className="font-semibold mr-1 cursor-pointer hover:text-blue-600 transition-all duration-100">
+                            / {selectedProduct.sub_category.title}
+                        </a>
+                    </Link>
+                </span>
+                <span>
+                    <Link href={`/products/${selectedProduct.slug.current}`}>
+                        <a className="font-semibold mr-1 cursor-pointer">
+                            / {selectedProduct.name}
+                        </a>
+                    </Link>
+                </span>
             </div>
             <div className="">
                 <div className="flex md:flex-row flex-col container md:pt-4 pt-3 mb-9 md:items-start md:w-max mx-auto items-center">
@@ -79,9 +90,7 @@ const singleProduct = ({
                         <div className="bg-[#a8e4fa] py-1.5 px-6 rounded-full w-max mb-2">
                             <p className="text-xs text-blue-600">
                                 <span className="font-semibold">Category:</span>{" "}
-                                {selectedProduct.category === null
-                                    ? "N/A"
-                                    : selectedProduct.category.title}
+                                {selectedProduct.category.title}
                             </p>
                         </div>
                         <div className="bg-[#a8e4fa] py-1.5 px-6 rounded-full w-max">
@@ -89,9 +98,7 @@ const singleProduct = ({
                                 <span className="font-semibold">
                                     Sub Category:
                                 </span>{" "}
-                                {selectedProduct.sub_category === null
-                                    ? "N/A"
-                                    : selectedProduct.sub_category.title}
+                                {selectedProduct.sub_category.title}
                             </p>
                         </div>
 
@@ -101,19 +108,16 @@ const singleProduct = ({
                         {/* <p className="mt-4">
                             {selectedProduct.description[0]?.children[0]?.text}
                         </p> */}
-                        {selectedProduct.description !== null && (
-                            <PortableText
-                                content={selectedProduct.description}
-                                serializers={{
-                                    li: ({ children }) => (
-                                        <li className="list-disc ml-4">
-                                            {children}
-                                        </li>
-                                    ),
-                                }}
-                            />
-                        )}
-
+                        <PortableText
+                            content={selectedProduct.description}
+                            serializers={{
+                                li: ({ children }) => (
+                                    <li className="list-disc ml-4">
+                                        {children}
+                                    </li>
+                                ),
+                            }}
+                        />
                         <a
                             className="items-center block text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer mt-16 md:px-10 px-6 md:py-4 py-2"
                             href={"/#contact"}

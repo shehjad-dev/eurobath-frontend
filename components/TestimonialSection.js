@@ -27,7 +27,7 @@ const TestimonialSection = () => {
     };
     return (
         <div
-            className="w-full bg-[url('../assets/images/heroBg.jpg')] bg-gray-700 bg-cover bg-no-repeat bg-blend-overlay bg-fixed md:pt-16 pt-8 md:pb-14 pb-8  mt-4 flex items-center justify-center scroll-smooth md:scroll-mt-20 scroll-mt-18"
+            className="w-full bg-[url('../assets/images/heroBg.webp')] bg-gray-700 bg-cover bg-no-repeat bg-blend-overlay bg-fixed md:pt-16 pt-8 md:pb-14 pb-8  mt-4 flex items-center justify-center scroll-smooth md:scroll-mt-20 scroll-mt-18"
             id="testimonials"
         >
             {/* <div className="w-full bg-blue-600 md:pt-16 pt-8 md:pb-14 pb-8  mt-4 flex items-center justify-center scroll-smooth"> */}

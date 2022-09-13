@@ -1,16 +1,7 @@
 import { useState, useEffect } from "react";
 import imageUrlBuilder from "@sanity/image-url";
 
-const AllProducts = () => {
-    const [selectedProduct, setSelectedProduct] = useState(null);
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [dataState, setDataState] = useState({
-        products: [],
-        loading: true,
-        error: "",
-    });
-
-    const { products, loading, error } = dataState;
+const AllProducts = ({ products }) => {
 
     const imageBuilder = imageUrlBuilder({
         baseUrl: "https://cdn.sanity.io",
@@ -19,28 +10,9 @@ const AllProducts = () => {
         token: "skFqdfoQprme7pMMehmFquJFNQEiOaPfycNBVcutXUa75dJr7FjY9yuZAs4MMZobcC3fCPa42XB2QNhxu6rURXueTLESZly3XrxIET04X44bf5ctAZpwtw61oC6pLqmWaEwcVjSr8aeAhx60EF6AsGvbWt26HUTTowzbi0qLyaDTc1aq0Ju7", // or leave blank for unauthenticated usage
         useCdn: true,
     });
+    console.log(products);
 
     const urlFor = (source) => imageBuilder.image(source);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const query = `*[ _type == "product" ]`;
-                const url = `https://ogzxacki.api.sanity.io/v2021-06-07/data/query/production?query=${query}`;
-                const directProduct = await fetch(url);
-                const json = await directProduct.json();
-                const products = json.result;
-                console.log(products);
-                setDataState({ ...dataState, products, loading: false });
-            } catch (err) {
-                /* setDataState({ ...datastate,
-                    error: err.message,
-                    loading: false,
-                }); */
-            }
-        };
-        fetchData();
-    }, []);
 
     return (
         <>
@@ -51,9 +23,9 @@ const AllProducts = () => {
                     </h1>
                 </div>
 
-                {!loading ? (
+                {products != undefined && products.length != 0 ? (
                     <div className="grid md:grid-cols-3 gap-6 mt-4 md:mb-16 mb-12">
-                        {dataState.products.map((product) => (
+                        {products.map((product) => (
                             <a
                                 key={product._id}
                                 /* href={`/products/${product.slug.current}`} */
