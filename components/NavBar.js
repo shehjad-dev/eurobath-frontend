@@ -9,7 +9,7 @@ const NavBar = ({ isOpen, toggleMenu }) => {
             <nav className="bg-white px-2 sm:px-4 py-2.5 fixed w-full sm:h-20 h-16 z-30 top-0 left-0 shadow-md">
                 <div className="container flex flex-wrap justify-between items-center mx-auto overflow-hidden">
                     <Link href="/">
-                        <a className="flex items-center">
+                        <a className="flex items-center w-28 h-auto">
                             <Image
                                 src={demoLogo}
                                 alt="Logo of Eurobath"
