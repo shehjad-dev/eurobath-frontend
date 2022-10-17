@@ -1,7 +1,33 @@
 import { useState, useEffect } from "react";
 import imageUrlBuilder from "@sanity/image-url";
+import Link from "next/link";
+import FilterOption from "./FilterOption";
+import { useRouter } from "next/router";
 
-const AllProducts = ({ products }) => {
+const AllProducts = ({ products, categories }) => {
+    const router = useRouter();
+    const activeCategoryId = router.query;
+
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
+
+    const [activeCategory, setActiveCategory] = useState("");
+
+    useEffect(() => {
+        configActiveCategory();
+    }, [activeCategoryId]);
+
+    const configActiveCategory = () => {
+        for (let i = 0; i < categories?.length; i++) {
+            if (activeCategoryId.slug === categories[i]._id) {
+                setActiveCategory(categories[i].title);
+            }
+        }
+        //setIsFilterOpen(!isFilterOpen);
+    };
+
+    const handleFilterToggle = () => {
+        setIsFilterOpen(!isFilterOpen);
+    };
 
     const imageBuilder = imageUrlBuilder({
         baseUrl: "https://cdn.sanity.io",
@@ -10,7 +36,7 @@ const AllProducts = ({ products }) => {
         token: "skFqdfoQprme7pMMehmFquJFNQEiOaPfycNBVcutXUa75dJr7FjY9yuZAs4MMZobcC3fCPa42XB2QNhxu6rURXueTLESZly3XrxIET04X44bf5ctAZpwtw61oC6pLqmWaEwcVjSr8aeAhx60EF6AsGvbWt26HUTTowzbi0qLyaDTc1aq0Ju7", // or leave blank for unauthenticated usage
         useCdn: true,
     });
-    console.log(products);
+    //console.log(products);
 
     const urlFor = (source) => imageBuilder.image(source);
 
@@ -19,8 +45,37 @@ const AllProducts = ({ products }) => {
             <div className="mx-auto container scroll-smooth">
                 <div className="flex flex-col justify-center items-center space-y-2 md:pt-8 pt-6">
                     <h1 className="xl:mb-8 sm:mb-[1rem] mb-[0.6rem] sm:text-4xl text-2xl font-bold leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-5xl">
-                        Our Products
+                        {activeCategory !== ""
+                            ? activeCategory
+                            : "Our Products"}
                     </h1>
+                </div>
+                <div className="relative w-fit mx-auto">
+                    <button
+                        className="px-3 py-2 border-2 border-blue-400 w-[15rem] mx-auto flex gap-2 justify-between rounded-md mb-9"
+                        onClick={() => handleFilterToggle()}
+                    >
+                        <p className="text-neutral-600 font-semibold">
+                            Filter by Category
+                        </p>
+                        <span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-6 h-6"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                />
+                            </svg>
+                        </span>
+                    </button>
+                    {isFilterOpen && <FilterOption categories={categories} />}
                 </div>
 
                 {products != undefined && products.length != 0 ? (
