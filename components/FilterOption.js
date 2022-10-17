@@ -18,7 +18,7 @@ const FilterOption = ({ categories }) => {
                         ))}
                     </>
                 ) : (
-                    <p>"No categories"</p>
+                    <p>No categories</p>
                 )}
             </ul>
         </div>
